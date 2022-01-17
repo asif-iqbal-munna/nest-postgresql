@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { Question } from 'src/modules/quiz/question.entitiy';
+import { Question } from 'src/modules/quiz/question/question.entitiy';
 import { Quiz } from 'src/modules/quiz/quiz.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {

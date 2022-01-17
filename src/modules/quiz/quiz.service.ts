@@ -13,6 +13,10 @@ export class QuizService {
     return [1, 2, 3, 'from the servie'];
   }
 
+  async getQuizById(id: number) {
+    return await this.quizRepository.findOne(id, { relations: ['questions'] });
+  }
+
   async createNewQuiz(quiz: CreateQuizDto) {
     return await this.quizRepository.save(quiz);
   }

@@ -1,5 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn
+} from 'typeorm';
+import { Question } from './question/question.entitiy';
+
 @Entity('quizes')
 export class Quiz extends BaseEntity {
   @PrimaryGeneratedColumn()
@@ -20,4 +28,7 @@ export class Quiz extends BaseEntity {
     default: 1,
   })
   isActive: boolean;
+
+  @OneToMany(() => Question, (question) => question.quiz)
+  questions: Question[];
 }
