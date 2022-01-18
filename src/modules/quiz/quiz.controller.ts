@@ -16,8 +16,8 @@ import { QuizService } from './quiz.service';
 export class QuizController {
   constructor(private quizService: QuizService) {}
   @Get()
-  getAllQuiz() {
-    return this.quizService.getAllQuiz();
+  getAllQuiz(): Promise<Quiz[]> {
+    return this.quizService.getAllQuizes();
   }
 
   @Get('/:id')
